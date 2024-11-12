@@ -1,0 +1,29 @@
+﻿
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TMS.Infra.Data.Entities
+{
+	[Table("TBL_USUARIOS")]
+	public class UserEntity
+	{
+		[Column("ID_USUARIO")]
+		public Guid Id { get; set; }
+
+		[Column("TX_NOME")]
+		public required string Name { get; set; }
+
+        [Column("TX_EMAIL")]
+		public required string Email { get; set; }
+
+        [Column("TX_SENHA")]
+		public required string Password { get; set; }
+
+        [Column("TX_REGISTRO")]
+        public DateTime CreatedAt { get; set; }
+
+        [Column("TX_ATUALIZACAO")]
+        public DateTime? UpdatedAt { get; set; }
+	}
+}
+
