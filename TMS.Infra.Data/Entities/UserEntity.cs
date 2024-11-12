@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TMS.Infra.Data.Entities
@@ -7,6 +8,7 @@ namespace TMS.Infra.Data.Entities
 	[Table("TBL_USUARIOS")]
 	public class UserEntity
 	{
+		[Key]
 		[Column("ID_USUARIO")]
 		public Guid Id { get; set; }
 
