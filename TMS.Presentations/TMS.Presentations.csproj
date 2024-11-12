@@ -7,4 +7,14 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Pages\User\" />
+    <None Remove="ViewModels\" />
+    <None Remove="ViewModels\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\User\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\User\" />
+  </ItemGroup>
 </Project>

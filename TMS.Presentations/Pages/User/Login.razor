@@ -1,0 +1,24 @@
+﻿@page "/login"
+@using Microsoft.AspNetCore.Components.Forms
+
+<div class="container">
+
+    <EditForm Model="_viewModel" OnValidSubmit="Submit">
+        <DataAnnotationsValidator />
+
+        <div id="login-form">
+            <h2>Make login.</h2>
+
+            <div class="form-control">
+                <InputText class="prompt form-content" @bind-Value="_viewModel.Email" placeholder="Insert your email" />
+                <ValidationMessage For="@(() => _viewModel.Email)" />
+            </div>
+            <div class="form-control">
+                <InputText class="prompt form-content" @bind-Value="_viewModel.Password" placeholder="Insert your password" />
+                <ValidationMessage For="@(() => _viewModel.Password)" />
+            </div>
+
+            <button type="submit" class="submit-btn form-content">Login</button>
+        </div>
+    </EditForm>
+</div>
