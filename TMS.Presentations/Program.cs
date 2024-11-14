@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using TMS.Infra.Ioc;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddExtensions();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
