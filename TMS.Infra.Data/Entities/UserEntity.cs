@@ -10,7 +10,7 @@ namespace TMS.Infra.Data.Entities
 	{
 		[Key]
 		[Column("ID_USUARIO")]
-		public Guid Id { get; set; }
+		public required Guid Id { get; set; }
 
 		[Column("TX_NOME")]
 		public required string Name { get; set; }
@@ -22,7 +22,7 @@ namespace TMS.Infra.Data.Entities
 		public required string Password { get; set; }
 
         [Column("TX_REGISTRO")]
-        public DateTime CreatedAt { get; set; }
+        public required DateTime CreatedAt { get; set; }
 
         [Column("TX_ATUALIZACAO")]
         public DateTime? UpdatedAt { get; set; }
