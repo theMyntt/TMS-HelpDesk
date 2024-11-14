@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.Application\TMS.Application.csproj" />
+    <ProjectReference Include="..\TMS.Domain\TMS.Domain.csproj" />
+    <ProjectReference Include="..\TMS.Infra.Data\TMS.Infra.Data.csproj" />
+  </ItemGroup>
 </Project>

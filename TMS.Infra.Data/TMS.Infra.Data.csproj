@@ -18,4 +18,7 @@
     <Folder Include="Entities\" />
     <Folder Include="Context\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.Domain\TMS.Domain.csproj" />
+  </ItemGroup>
 </Project>
