@@ -1,5 +1,5 @@
 ﻿using System;
-namespace TMS.Infra.Data.Exceptions
+namespace TMS.Infra.Data.Exceptions.User
 {
 	public class UserAlreadyExistsException : Exception
 	{

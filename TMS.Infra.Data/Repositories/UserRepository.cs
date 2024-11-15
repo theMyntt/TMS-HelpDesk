@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using TMS.Infra.Data.Abstractions;
 using TMS.Infra.Data.Context;
 using TMS.Infra.Data.Entities;
-using TMS.Infra.Data.Exceptions;
 using TMS.Infra.Data.Exceptions.User;
 
 namespace TMS.Infra.Data.Repositories
