@@ -61,9 +61,16 @@ namespace TMS.Infra.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<UserEntity>> GetUsers(int page)
+        public async Task<IEnumerable<UserEntity>> GetUsers(int page)
         {
-            throw new NotImplementedException();
+            if (page < 1) page = 1;
+
+            int limit = 20;
+
+            return await _context.Users
+                .Skip((page - 1) * limit)
+                .Take(limit)
+                .ToListAsync();
         }
     }
 }
