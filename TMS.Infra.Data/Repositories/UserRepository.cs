@@ -56,9 +56,17 @@ namespace TMS.Infra.Data.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<UserEntity>> Filter(Expression<Func<UserEntity, bool>> filter, int page)
+        public async Task<IEnumerable<UserEntity>> Filter(Expression<Func<UserEntity, bool>> filter, int page)
         {
-            throw new NotImplementedException();
+            if (page < 1) page = 1;
+
+            int limit = 20;
+
+            return await _context.Users
+                .Where(filter)
+                .Skip((page - 1) * limit)
+                .Take(limit)
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<UserEntity>> GetUsers(int page)
