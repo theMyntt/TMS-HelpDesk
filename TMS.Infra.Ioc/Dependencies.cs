@@ -8,7 +8,7 @@ namespace TMS.Infra.Ioc
 {
 	public static class Dependencies
 	{
-		public static IServiceCollection AddExtensions(this IServiceCollection services, IConfiguration configuration) 
+		public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration configuration) 
 		{
 			var conn = configuration.GetConnectionString("MSSQL") ?? throw new Exception("MSSQL CONN IS NULL");
 
