@@ -41,9 +41,19 @@ namespace TMS.Infra.Data.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public Task EditUser(UserEntity entity)
+        public async Task EditUser(UserEntity entity)
         {
-            throw new NotImplementedException();
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == entity.Email);
+
+            if (user == null)
+            {
+                throw new UserNotExistsException();
+            }
+
+            entity.Id = user.Id;
+
+            _context.Users.Attach(entity);
+            await _context.SaveChangesAsync();
         }
 
         public Task<IEnumerable<UserEntity>> Filter(Expression<Func<UserEntity, bool>> filter, int page)
