@@ -16,6 +16,7 @@
     <None Remove="Repositories\" />
     <None Remove="Abstractions\" />
     <None Remove="Exceptions\" />
+    <None Remove="Exceptions\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -23,6 +24,7 @@
     <Folder Include="Repositories\" />
     <Folder Include="Abstractions\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Exceptions\User\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMS.Domain\TMS.Domain.csproj" />

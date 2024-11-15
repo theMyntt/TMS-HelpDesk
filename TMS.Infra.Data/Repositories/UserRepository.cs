@@ -5,6 +5,7 @@ using TMS.Infra.Data.Abstractions;
 using TMS.Infra.Data.Context;
 using TMS.Infra.Data.Entities;
 using TMS.Infra.Data.Exceptions;
+using TMS.Infra.Data.Exceptions.User;
 
 namespace TMS.Infra.Data.Repositories
 {
@@ -27,9 +28,17 @@ namespace TMS.Infra.Data.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public Task DeleteUser(UserEntity entity)
+        public async Task DeleteUser(UserEntity entity)
         {
-            throw new NotImplementedException();
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == entity.Email);
+
+            if (user == null)
+            {
+                throw new UserNotExistsException();
+            }
+
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
         }
 
         public Task EditUser(UserEntity entity)
