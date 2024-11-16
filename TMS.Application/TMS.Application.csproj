@@ -10,4 +10,10 @@
     <ProjectReference Include="..\TMS.Domain\TMS.Domain.csproj" />
     <ProjectReference Include="..\TMS.Infra.Data\TMS.Infra.Data.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Abstractions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstractions\" />
+  </ItemGroup>
 </Project>
