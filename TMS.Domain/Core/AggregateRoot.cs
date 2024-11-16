@@ -1,11 +1,10 @@
 ﻿using System;
 namespace TMS.Domain.Core
 {
-	public class AggregateRoot
+	public abstract class AggregateRoot
 	{
-		public AggregateRoot()
-		{
-		}
+		public abstract object ToJSON();
+		protected abstract void ValidateDomain();
 	}
 }
 
