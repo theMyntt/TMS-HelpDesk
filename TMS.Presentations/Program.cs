@@ -8,6 +8,7 @@ builder.Configuration.AddJsonFile($"appsettings.{builder.Environment.Environment
 
 builder.Services.AddDbContext(builder.Configuration);
 builder.Services.AddInfraLayer();
+builder.Services.AddApplicationLayer();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 

@@ -12,9 +12,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Abstractions\" />
+    <None Remove="Abstractions\User\" />
+    <None Remove="DTOs\" />
+    <None Remove="DTOs\User\" />
+    <None Remove="UseCases\" />
+    <None Remove="UseCases\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstractions\" />
+    <Folder Include="Abstractions\User\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="DTOs\User\" />
+    <Folder Include="UseCases\" />
+    <Folder Include="UseCases\User\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="OneOf" Version="3.0.271" />
