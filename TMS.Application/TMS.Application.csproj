@@ -17,6 +17,7 @@
     <None Remove="DTOs\User\" />
     <None Remove="UseCases\" />
     <None Remove="UseCases\User\" />
+    <None Remove="Mappers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstractions\" />
@@ -25,6 +26,7 @@
     <Folder Include="DTOs\User\" />
     <Folder Include="UseCases\" />
     <Folder Include="UseCases\User\" />
+    <Folder Include="Mappers\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="OneOf" Version="3.0.271" />

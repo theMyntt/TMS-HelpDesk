@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using TMS.Domain.Aggregates;
 using TMS.Domain.Core;
 
 namespace TMS.Application.DTOs.User
@@ -19,7 +20,7 @@ namespace TMS.Application.DTOs.User
 
 		public class Output : StandardResponse
 		{
-			public required string Token { get; set; }
+			public required UserAggregate User { get; set; }
 		}
 	}
 }

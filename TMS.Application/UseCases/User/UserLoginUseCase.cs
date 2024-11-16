@@ -10,10 +10,12 @@ namespace TMS.Application.UseCases.User
 	public class UserLoginUseCase : IUserLoginUseCase
 	{
         private readonly IUserRepository _repository;
+        private readonly IUserMapper _mapper;
 
-		public UserLoginUseCase(IUserRepository repository)
+		public UserLoginUseCase(IUserRepository repository, IUserMapper mapper)
 		{
             _repository = repository;
+            _mapper = mapper;
 		}
 
         public async Task<OneOf<UserLoginDTO.Output, StandardResponse>> Run(UserLoginDTO.Input input)
@@ -30,13 +32,14 @@ namespace TMS.Application.UseCases.User
                 };
             }
 
-            var user = users.First();
+            var user = _mapper.ToDomain(users.First());
 
             return new UserLoginDTO.Output
             {
                 Message = "User found",
                 StatusCode = 200,
-                Token = ""
+                User = user,
+                Code = "UserFound"
             };
         }
     }
