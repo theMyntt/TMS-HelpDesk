@@ -13,7 +13,7 @@ builder.Services.AddApplicationLayer();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-builder.Services.AddSingleton<LoginViewModel>();
+builder.Services.AddTransient<LoginViewModel>();
 
 var app = builder.Build();
 

@@ -1,9 +1,11 @@
 ﻿@page "/login"
 @using Microsoft.AspNetCore.Components.Forms
+@using TMS.Presentations.ViewModels.User
+@inject LoginViewModel _viewModel   
 
 <div class="container">
 
-    <EditForm Model="_viewModel" OnValidSubmit="Submit">
+    <EditForm Model="_viewModel" OnValidSubmit="_viewModel.Submit">
         <DataAnnotationsValidator />
 
         <div id="login-form">

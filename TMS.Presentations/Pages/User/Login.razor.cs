@@ -6,13 +6,6 @@ namespace TMS.Presentations.Pages.User
 {
 	public partial class Login
 	{
-		private readonly LoginViewModel _viewModel;
-
-		public Login(LoginViewModel viewModel)
-		{
-			_viewModel = viewModel; 
-		}
-
 		private void Submit()
 		{
 

@@ -2,13 +2,19 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
+using Microsoft.AspNetCore.Components;
+using TMS.Application.Abstractions.User;
+using TMS.Application.DTOs.User;
 
 namespace TMS.Presentations.ViewModels.User
 {
 	public class LoginViewModel : INotifyPropertyChanged
 	{
-		private string _password;
-		private string _email;
+		private IUserLoginUseCase _useCase;
+		private NavigationManager _navigation;
+
+		private string _password = string.Empty;
+		private string _email = string.Empty;
 
 		[Required]
 		[MinLength(7, ErrorMessage = "Password is invalid.")]
@@ -26,11 +32,28 @@ namespace TMS.Presentations.ViewModels.User
 			set => SetProperty(ref _email, value);
 		}
 
-		public LoginViewModel()
+		public LoginViewModel(IUserLoginUseCase useCase, NavigationManager navigation)
 		{
+			_useCase = useCase;
+			_navigation = navigation;
 		}
 
         public event PropertyChangedEventHandler? PropertyChanged;
+
+		public async Task<bool> Submit()
+		{
+			var result = await _useCase.Run(new UserLoginDTO.Input
+			{
+				Email = Email,
+				Password = Password
+			});
+
+			if (result.IsT1)
+				return false;
+
+			_navigation.NavigateTo("/home");
+			return true;
+		}
 
         protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
