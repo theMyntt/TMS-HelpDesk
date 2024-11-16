@@ -1,5 +1,5 @@
 ﻿using System;
-namespace TMS.Application.Abstractions
+namespace TMS.Domain.Core
 {
 	public interface IUseCase<I, O> where I : class
     {
