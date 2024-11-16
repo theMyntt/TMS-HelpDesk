@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TMS.Application.Abstractions.User;
+using TMS.Application.Mappers;
 using TMS.Application.UseCases.User;
 using TMS.Infra.Data.Abstractions;
 using TMS.Infra.Data.Context;
@@ -33,6 +34,7 @@ namespace TMS.Infra.Ioc
 		public static IServiceCollection AddApplicationLayer(this IServiceCollection services)
 		{
 			services.AddScoped<IUserLoginUseCase, UserLoginUseCase>();
+			services.AddScoped<IUserMapper, UserMapper>();
 
 			return services;
 		}
