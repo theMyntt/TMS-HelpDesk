@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using TMS.Infra.Ioc;
+using TMS.Presentations.ViewModels.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddInfraLayer();
 builder.Services.AddApplicationLayer();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+
+builder.Services.AddSingleton<LoginViewModel>();
 
 var app = builder.Build();
 

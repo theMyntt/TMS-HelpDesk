@@ -1,4 +1,5 @@
 ﻿using System;
+using TMS.Application.Abstractions.User;
 using TMS.Presentations.ViewModels.User;
 
 namespace TMS.Presentations.Pages.User
@@ -7,9 +8,9 @@ namespace TMS.Presentations.Pages.User
 	{
 		private readonly LoginViewModel _viewModel;
 
-		public Login()
+		public Login(LoginViewModel viewModel)
 		{
-			_viewModel = new(); 
+			_viewModel = viewModel; 
 		}
 
 		private void Submit()
